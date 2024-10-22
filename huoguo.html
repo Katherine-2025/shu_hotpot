@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotpot Page</title>
+  <title>Document</title>
 
   <script src="p5.js"></script>
   <script src="p5.sound.min.js"></script>
@@ -17,15 +17,27 @@
 
     body {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #fff;
+    }
+
+    .tips {
+      position: fixed;
+      top: 32px;
+      right: 100px;
     }
   </style>
 </head>
 
 <body>
+
+  <div class="tips">
+    <p>1. To boil ingredients, drag them into the pot!</p>
+    <p>2. Keep an eye on the boiling time to avoid overcooking!</p>
+    <p>3. Press button to change hotpot flavor—experiment with different combinations for the best flavor!</p>
+  </div>
+
   <script src="huoguo.js"></script>
 </body>
 

@@ -121,6 +121,7 @@ class Ingredient {
     this.duration = duration;
     this.img = img;
     this.life = true
+    this.inBowl = false;
   }
   display() {
     if (this.life) {
@@ -160,7 +161,12 @@ class Ingredient {
   checkGrabbed(x, y) {
     let distance = dist(x, y, this.x, this.y);
     if (distance < this.rad) {
-      selectedIngredient = this; // *****
+
+      if (this.inBowl) {
+        this.life = false;
+      } else {
+        selectedIngredient = this; // *****
+      }
     }
   }
   checkBoiled(pot) {
@@ -184,7 +190,7 @@ class Ingredient {
   }
   checkBowl(bowlPos) {
     if (dist(bowlPos.x, bowlPos.y, this.x, this.y) < 65) {
-      this.life = false;
+      this.inBowl = true;
     }
   }
 }
