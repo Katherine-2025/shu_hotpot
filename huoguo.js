@@ -23,7 +23,7 @@ function preload() {
   const noodle = loadImage("img/noodle.png");
   imgHotPotList = [loadImage("img/hotpot.png"), loadImage("img/hotpot_1.png")];
   imgBowl = loadImage("img/bowl.png");
-  particleTexture = loadImage('/img/particle_texture.png');
+  particleTexture = loadImage('img/particle_texture.png');
   imgFoodList = [
     { "value": beef, "name": "beef" },
     { "value": beefOmasum, "name": "beefOmasum" },
