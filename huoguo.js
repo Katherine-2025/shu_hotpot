@@ -182,8 +182,8 @@ class Ingredient {
         this.b = 255;
       } else if (this.boiledTime >= 300) {
         // overcooked!
-        this.r = 128;
-        this.g = 128;
+        this.r = 0;
+        this.g = 0;
         this.b = 0;
       }
     }
