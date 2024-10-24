@@ -45,7 +45,7 @@ function setup() {
   // food
   for (let i = 0; i < imgFoodList.length; i++) {
     let img = imgFoodList[i];
-    ingredients.push(new Ingredient(50, 30 + 80 * i, 20, img.name, random(3, 10), img.value));
+    ingredients.push(new Ingredient(50, 30 + 80 * i, 20, img.name, random(2, 7), img.value));
   }
   // ingredients.push(new Ingredient(50, 50, 20, "beef", 5));
   // ingredients.push(new Ingredient(50, 100, 20, "Lamb", 7));
@@ -173,22 +173,27 @@ class Ingredient {
     let distance = dist(pot.x, pot.y, this.x, this.y);
     if (distance < pot.rad - this.rad) {
       this.boiledTime++;
-      //
       let sec = this.duration * 60;
+
       if (this.boiledTime > sec - 60 && this.boiledTime < sec + 60) {
-        // good time!
+        // 在最佳时间时颜色变为白色
         this.r = 255;
         this.g = 255;
         this.b = 255;
+      } else if (this.boiledTime >= sec + 60 && this.boiledTime < 300) {
+        // 煮过头之前的过渡颜色变化，比如变成灰色
+        this.r = 150;
+        this.g = 150;
+        this.b = 150;
       } else if (this.boiledTime >= 300) {
-        // overcooked!
+        // 煮过头时变黑
         this.r = 0;
         this.g = 0;
         this.b = 0;
       }
     }
   }
-  checkBowl(bowlPos) {
+  eckBowl(bowlPos) {
     if (dist(bowlPos.x, bowlPos.y, this.x, this.y) < 65) {
       this.inBowl = true;
     }
